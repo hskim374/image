@@ -12,33 +12,30 @@
 
     .banner-container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column; /* 항상 세로 정렬 */
+      align-items: center;
       gap: 20px;
-      padding: 10px;
+      padding: 20px;
     }
 
     .banner-container a {
-      flex: 1 1 45%;
+      display: block;
+      width: 450px;
+      height: 450px;
       text-decoration: none;
     }
 
     .banner-container img {
       width: 100%;
-      height: auto;
+      height: 100%;
       border-radius: 10px;
-      aspect-ratio: 1 / 1; /* 정사각형 */
-      object-fit: contain;  /* 이미지가 짤리지 않도록 */
-      background-color: #f9f9f9; /* 비어있는 영역 보완 */
+      object-fit: cover; /* 정사각형 안에 꽉 차게 */
     }
 
-    @media (max-width: 768px) {
-      .banner-container {
-        flex-direction: column;
-      }
-
+    @media (max-width: 480px) {
       .banner-container a {
-        flex: 1 1 100%;
+        width: 90vw;
+        height: 90vw; /* 모바일에서도 정사각형 유지 */
       }
     }
   </style>
